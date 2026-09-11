@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Wrench, MapPin, Phone, Clock, ShieldCheck, Mail, Calendar, Sparkles } from "lucide-react";
+import { Wrench, MapPin, Phone, Clock, ShieldCheck, Mail, Calendar, Sparkles, Instagram, Facebook } from "lucide-react";
 import Header from "./components/Header";
 import ServiceScheduler from "./components/ServiceScheduler";
 import PartsShop from "./components/PartsShop";
@@ -187,8 +187,21 @@ export default function App() {
         </AnimatePresence>
       </main>
 
+      {/* Floating WhatsApp contact button */}
+      <a
+        href="https://wa.me/971551359965"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat with us on WhatsApp"
+        className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] shadow-lg shadow-black/20 transition-transform hover:scale-105"
+      >
+        <svg viewBox="0 0 32 32" className="h-8 w-8 fill-white">
+          <path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.362.684 4.564 1.865 6.42L4 29l7.77-1.83A11.94 11.94 0 0 0 16.001 27C22.628 27 28 21.627 28 15S22.628 3 16.001 3Zm0 21.6c-1.98 0-3.822-.575-5.376-1.566l-.385-.243-4.61 1.086 1.107-4.49-.252-.392A9.56 9.56 0 0 1 5.6 15c0-5.735 4.666-10.4 10.401-10.4 5.735 0 10.4 4.665 10.4 10.4 0 5.735-4.665 10.6-10.4 10.6Zm5.723-7.77c-.313-.157-1.85-.913-2.136-1.017-.287-.104-.496-.157-.705.157-.208.313-.809 1.017-.992 1.226-.183.209-.365.235-.678.078-.313-.157-1.323-.488-2.52-1.556-.932-.831-1.562-1.858-1.745-2.171-.183-.313-.02-.482.137-.638.14-.14.313-.365.47-.548.156-.183.208-.313.313-.522.104-.209.052-.392-.026-.548-.078-.157-.705-1.7-.966-2.328-.254-.611-.512-.528-.705-.538-.183-.008-.392-.01-.6-.01-.209 0-.548.078-.835.392-.287.313-1.096 1.072-1.096 2.614s1.122 3.032 1.278 3.24c.156.209 2.208 3.372 5.352 4.728.748.323 1.331.516 1.786.66.751.239 1.434.205 1.974.124.602-.09 1.85-.756 2.111-1.487.26-.73.26-1.357.183-1.487-.078-.13-.287-.209-.6-.365Z"/>
+        </svg>
+      </a>
+
       {/* Slide-over cart overlay panel */}
-      <CartDrawer 
+      <CartDrawer
         isOpen={isCartOpen}
         onClose={() => setIsCartOpen(false)}
         cartItems={cartItems}
@@ -246,6 +259,14 @@ export default function App() {
               <span className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-slate-400 flex-shrink-0" />
                 <a href="tel:+971551359965" className="hover:text-amber-500 transition-colors">+971 55 135 9965</a>
+              </span>
+              <span className="flex items-center gap-2">
+                <Instagram className="h-4 w-4 text-slate-400 flex-shrink-0" />
+                <a href="https://www.instagram.com/raargarage/" target="_blank" rel="noopener noreferrer" className="hover:text-amber-500 transition-colors">@raargarage</a>
+              </span>
+              <span className="flex items-center gap-2">
+                <Facebook className="h-4 w-4 text-slate-400 flex-shrink-0" />
+                <a href="https://www.facebook.com/profile.php?id=61565018635648" target="_blank" rel="noopener noreferrer" className="hover:text-amber-500 transition-colors">RAAR Garage</a>
               </span>
             </div>
           </div>
